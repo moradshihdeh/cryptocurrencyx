@@ -1,6 +1,6 @@
 ### home
 GET http://localhost:3000/home
-Authorization: BEARER eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJpYXQiOjE3MTA3MDc4MzV9.DOv_IFwov-cOKL2KkN2W7fxYHtbmEnjRqwudVAIThEU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJpYXQiOjE3MTA3MTAyODd9.jtfu_Gijk-TmCyuw9kjLZuh-xSdIZziTeGJnBjo6FWM
 
 
 ### top-ten crytpocurencies
