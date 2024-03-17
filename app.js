@@ -22,16 +22,6 @@ app.get('/top-ten', async (req, res) => {
     }
 });
 
-const posts = [
-    {
-        username:'admin',
-        title:'first post'
-    },
-    {
-        username:'user1',
-        title:'second post'
-    }
-]
 app.get('/home', authenticateToken, (req, res) => {
     res.json(posts)
 })
