@@ -1,0 +1,15 @@
+### home
+GET http://localhost:3000/home
+Authorization: BEARER eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJpYXQiOjE3MTA3MDc4MzV9.DOv_IFwov-cOKL2KkN2W7fxYHtbmEnjRqwudVAIThEU
+
+
+### top-ten crytpocurencies
+GET http://localhost:3000/top-ten 
+
+###
+POST http://localhost:3000/login 
+Content-Type: application/json 
+
+{
+    "username": "admin"
+}
