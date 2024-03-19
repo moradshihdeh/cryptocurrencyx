@@ -11,6 +11,13 @@ const port = 3000;
 app.use(express.static('public'));
 app.use(express.json())
 
+
+const users = [
+    { id: 1, username: 'admin', password: 'secret' },
+    // Add more users...
+  ];
+   
+
 app.get('/top-ten', authenticateToken, async (req, res) => {
     try {
         const response = await axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false');
@@ -26,14 +33,30 @@ app.get('/home', authenticateToken, (req, res) => {
     res.json({"loged": true})
 })
 
+function getUser(username, password) {
+    const user = users.find(u => u.username === username && u.password === password)
+    return user
+}
+
 app.post('/login', (req, res) => {
     const username = req.body.username
-    const user = { name: username }
+    const password = req.body.password
 
+    let user = getUser(username, password)
+
+    // check credential part for future use
+    if(!user){
+        res.sendStatus(401)
+    }
+    
     const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET) 
     res.json({accessToken: accessToken})
 
 })
+
+function generateAccessToken(user){
+    return JsonWebTokenError.sign(user, process.env.ACCESS_TOKEN_SECRET, {expiresIn:"1h"})
+}
 
 function authenticateToken(req, res, next){
     const authHeader = req.headers['authorization']
