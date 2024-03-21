@@ -1,15 +1,15 @@
 ### home
 GET http://localhost:3000/home
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInBhc3N3b3JkIjoic2VjcmV0IiwiaWF0IjoxNzEwODc4Mzk2fQ.gFrL3GEGxwiQ3FHs0mjdMv3Ua0FYjHeJwxrBs-ZJRus
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInBhc3N3b3JkIjoic2VjcmV0IiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNzExMDI4NzE0LCJleHAiOjE3MTEwMzIzMTR9.NA3p36mPHdWihebQbK33EHnDB0OfHG-praPslS_riRU
 
 
 ### top-ten crytpocurencies
 GET http://localhost:3000/top-ten 
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInBhc3N3b3JkIjoic2VjcmV0IiwiaWF0IjoxNzEwODc4Mzk2fQ.gFrL3GEGxwiQ3FHs0mjdMv3Ua0FYjHeJwxrBs-ZJRus
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInBhc3N3b3JkIjoic2VjcmV0IiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNzExMDI4NzE0LCJleHAiOjE3MTEwMzIzMTR9.NA3p36mPHdWihebQbK33EHnDB0OfHG-praPslS_riRU
 
 
 ###
-POST http://localhost:3000/login 
+POST http://localhost:3000/api/login 
 Content-Type: application/json 
 
 {
