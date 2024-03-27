@@ -1,27 +1,15 @@
-require('dotenv').config()
-
 const express = require('express');
-
-
-const authroute = require('./routes/auth')
-const siteroute = require('./routes/site')
-
+const bodyParser = require('body-parser');
+const authRoutes = require('./routes/authRoutes');
+const infoRoutes = require('./routes/infoRoutes');
 
 const app = express();
-const port = 3000;
+app.use(bodyParser.json());
 
-app.use(express.static('public'));
-app.use(express.json())
+app.use('/auth', authRoutes);
+app.use('/', infoRoutes);
 
-
-//routes 
-app.use('/', authroute)
-app.use('/', siteroute)
-
-
-
-
-// test change
-app.listen(port, () => {
-    console.log(`Server is running at http://localhost:${port}`);
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
