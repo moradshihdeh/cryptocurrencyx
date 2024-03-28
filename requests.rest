@@ -1,28 +1,18 @@
 ### home
 GET http://localhost:3000/home
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZW1haWwiOiJtb3JhZEBnbWFpbC5jb20iLCJpYXQiOjE3MTE1MzMxNDYsImV4cCI6MTcxMTUzNDA0Nn0.Ta9_YbU_JntTjR5tm__6E0WZtvIyVpslJXeFkglZvzk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZW1haWwiOiJtb3JhZEBnbWFpbC5jb20iLCJpYXQiOjE3MTE1OTE1NDYsImV4cCI6MTcxMTU5MjQ0Nn0.RXXMi5zNwlKrl0J18HsLHdhmm-baJCbb53logs-Q71w
 
 ### top-ten crytpocurencies
 GET http://localhost:3000/top-ten 
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZW1haWwiOiJtb3JhZEBnbWFpbC5jb20iLCJpYXQiOjE3MTE1MzMxNDYsImV4cCI6MTcxMTUzNDA0Nn0.Ta9_YbU_JntTjR5tm__6E0WZtvIyVpslJXeFkglZvzk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZW1haWwiOiJtb3JhZEBnbWFpbC5jb20iLCJpYXQiOjE3MTE1OTE1NDYsImV4cCI6MTcxMTU5MjQ0Nn0.RXXMi5zNwlKrl0J18HsLHdhmm-baJCbb53logs-Q71w
 
 ### refresh token 
 POST http://localhost:3000/auth/refresh-token
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInBhc3N3b3JkIjoic2VjcmV0IiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNzExMjc1OTUyLCJleHAiOjE3MTEyNzk1NTJ9.NezqSg6h4aHPW47noQLBArv35I0Lym5A76N7c9dJKXY
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZW1haWwiOiJtb3JhZEBnbWFpbC5jb20iLCJpYXQiOjE3MTE1OTE1NDYsImV4cCI6MTcxMTU5MjQ0Nn0.RXXMi5zNwlKrl0J18HsLHdhmm-baJCbb53logs-Q71w
 Content-Type: application/json 
 
 {
-  "user": {
-    "id": 1,
-    "username": "admin",
-    "password": "secret",
-    "isAdmin": true
-  },
-  "tokenobj": {
-    "id": 1,
-    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInBhc3N3b3JkIjoic2VjcmV0IiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNzExMjc1OTUyLCJleHAiOjE3MTEyNzk1NTJ9.NezqSg6h4aHPW47noQLBArv35I0Lym5A76N7c9dJKXY",
-    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInBhc3N3b3JkIjoic2VjcmV0IiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNzExMjc1OTUyLCJleHAiOjE3MTEyODMxNTJ9.rEqgXMnsXgcgjgBqDZKwvSCos8XUn3wcqB0ne1LxzTU"
-  }
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZW1haWwiOiJtb3JhZEBnbWFpbC5jb20iLCJpYXQiOjE3MTE1OTE1NDYsImV4cCI6MTcxMjE5NjM0Nn0.1nLPqpmzLsJblGJ3ZFrDdeVh_8Yo8RvijcZlWdB-jKg"
 }
 
 ###REGISTER
