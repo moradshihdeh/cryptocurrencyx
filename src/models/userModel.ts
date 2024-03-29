@@ -26,5 +26,11 @@ async function saveToken(userId: any, accessToken: any, refreshToken: any): Prom
   await client.query(insertTokenQuery, [userId, accessToken, refreshToken]);
 }
 
-export { create, findByUsername, saveToken };
+async function getRefreshToken(refreshToken: any): Promise<any> {
+  const selectQuery = 'SELECT * FROM tokens WHERE refresh_token = $1';
+  const result = await client.query(selectQuery, [refreshToken]);
+  return result
+}
+
+export { create, findByUsername, saveToken, getRefreshToken };
 

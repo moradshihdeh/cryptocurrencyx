@@ -1,15 +1,9 @@
 // middleware.js
 import * as jwt from 'jsonwebtoken';
-import { Client } from 'pg';
+import { getRefreshToken } from '../models/userModel';
 
 const accessTokenSecret = 'secret_key';
 
-const connectionString = 'postgresql://testuser:password@localhost:4998/cryptodb';
-const client = new Client({
-  connectionString: connectionString
-});
-
-client.connect();
 
 function verifyAccessToken(req:any, res:any, next:any) {
   const authHeader = req.headers['authorization'];
@@ -29,8 +23,8 @@ function verifyAccessToken(req:any, res:any, next:any) {
 }
 
 async function refreshToken(refreshToken:any) {
-  const selectQuery = 'SELECT * FROM tokens WHERE refresh_token = $1';
-  const result = await client.query(selectQuery, [refreshToken]);
+  
+  const result = await getRefreshToken(refreshToken);
 
   if (result.rows.length === 0) {
     return null;
