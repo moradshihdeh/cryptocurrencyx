@@ -1,3 +1,6 @@
+import * as dotenv from 'dotenv';
+dotenv.config();
+
 // Import Express
 import * as express from 'express';
 import * as authRoutes from './routes/authRoutes';

@@ -1,8 +1,11 @@
+import * as dotenv from 'dotenv';
+dotenv.config();
+
 // middleware.js
 import * as jwt from 'jsonwebtoken';
 import { getRefreshToken } from '../models/userModel';
 
-const accessTokenSecret = 'secret_key';
+const accessTokenSecret = process.env.SECRET_KEY || 'sercret key';
 
 
 function verifyAccessToken(req:any, res:any, next:any) {

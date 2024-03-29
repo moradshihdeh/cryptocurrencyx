@@ -1,6 +1,9 @@
+import * as dotenv from 'dotenv';
+dotenv.config();
+
 import { Client } from 'pg';
 
-const connectionString = 'postgresql://testuser:password@localhost:4998/cryptodb';
+const connectionString = process.env.CONNECTION_STRING;
 const client = new Client({
   connectionString: connectionString
 });

@@ -1,3 +1,6 @@
+import * as dotenv from 'dotenv';
+dotenv.config();
+
 import axios from 'axios';
 
 const homepage = (req:any, res:any) => {

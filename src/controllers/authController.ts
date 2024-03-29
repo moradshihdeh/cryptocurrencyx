@@ -1,7 +1,13 @@
+import * as dotenv from 'dotenv';
+dotenv.config();
+
+
 import * as bcrypt from 'bcrypt';
 import * as jwt from 'jsonwebtoken';
 import * as UserModel from '../models/userModel';
 import * as middleware from '../middlewares/middleware';
+
+const secret_key = process.env.SECRET_KEY || 'secret key';
 
 async function register(req:any, res:any) {
   try {
@@ -10,7 +16,7 @@ async function register(req:any, res:any) {
 
     const user = await UserModel.create({ username, password: hashedPassword, email });
 
-    res.status(201).json({ message: 'User registered successfully', user });
+    res.status(201).json({ message: 'User registered successfully', user:{id:user.id, username:user.username, email:user.email} });
   } catch (error) {
     console.error('Error registering user:', error);
     res.status(500).json({ message: 'Internal server error' });
@@ -32,8 +38,8 @@ async function login(req:any, res:any) {
       return res.status(401).json({ message: 'Invalid username or password' });
     }
 
-    const accessToken = jwt.sign({ username: user.username, email: user.email }, 'secret_key', { expiresIn: '15m' });
-    const refreshToken = jwt.sign({ username: user.username, email: user.email }, 'refresh_secret_key', { expiresIn: '7d' });
+    const accessToken = jwt.sign({ username: user.username, email: user.email }, secret_key, { expiresIn: '15m' });
+    const refreshToken = jwt.sign({ username: user.username, email: user.email }, secret_key, { expiresIn: '7d' });
 
     await UserModel.saveToken(user.id, accessToken, refreshToken);
 
